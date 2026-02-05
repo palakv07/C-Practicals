@@ -241,7 +241,53 @@ int main()
 }*/
 
 //4. Consider a currency system in which there are notes of 6 denominations Rs1,2,5,10,50,100. If a sum of Rs N is enter through keyboard. WAP to compute smallest no. of notes that will combine to give Rs N.
+#include <stdio.h>
 
+int main()
+{
+    int N;
+    int count = 0;
+
+    printf("Enter amount in Rs: ");
+    scanf("%d", &N);
+
+    if (N >= 100) {
+        count = N / 100;
+        printf("100 : %d\n", count);
+        N = N % 100;
+    }
+
+    if (N >= 50) {
+        count = N / 50;
+        printf("50  : %d\n", count);
+        N = N % 50;
+    }
+
+    if (N >= 10) {
+        count = N / 10;
+        printf("10  : %d\n", count);
+        N = N % 10;
+    }
+
+    if (N >= 5) {
+        count = N / 5;
+        printf("5   : %d\n", count);
+        N = N % 5;
+    }
+
+    if (N >= 2) {
+        count = N / 2;
+        printf("2   : %d\n", count);
+        N = N % 2;
+    }
+
+    if (N >= 1) {
+        count = N;
+        printf("1   : %d\n", count);
+    }
+
+    return 0;
+}
 
 //5. While purchasing certain items, a discount of 10% was offered, If quantity is more then 1000.If Quantity and price are offered through keyboard, wap to calculate expense.
 /*#include <stdio.h>
@@ -355,3 +401,4 @@ int rom(int y, int k, char c)
     }
     return(y%k);
 }  
+
